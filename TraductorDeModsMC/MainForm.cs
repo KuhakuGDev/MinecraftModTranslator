@@ -20,6 +20,8 @@ namespace TraductorDeModsMC
         private string translatePath;
         string modId;
         string currentLenguage;
+
+        Process myProcess = new Process();
         public MinecraftTranslator()
         {
             InitializeComponent();
@@ -87,6 +89,9 @@ namespace TraductorDeModsMC
             ZipFile.CreateFromDirectory(Directory.GetCurrentDirectory() + @"\Mod\UnZipped", Directory.GetCurrentDirectory() + @"\Mod\" + modId + ".jar");
             DeleteFiles();
             Process.Start("explorer.exe", Directory.GetCurrentDirectory() + @"\Mod\");
+            myProcess.StartInfo.UseShellExecute = true;
+            myProcess.StartInfo.FileName = "https://www.youtube.com/channel/UCOAHgm6pf3a1w9Z_caLzFhg";
+            myProcess.Start();
             Application.Restart();
         }
 

@@ -30,6 +30,7 @@ namespace TraductorDeModsMC
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MinecraftTranslator));
             this.ModPathBut = new System.Windows.Forms.Button();
             this.SearchModId = new System.Windows.Forms.Timer(this.components);
             this.TranslatePathBut = new System.Windows.Forms.Button();
@@ -89,6 +90,7 @@ namespace TraductorDeModsMC
             this.Controls.Add(this.StartBut);
             this.Controls.Add(this.TranslatePathBut);
             this.Controls.Add(this.ModPathBut);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MinecraftTranslator";
             this.Text = "Traductor de Mods de Minecraft";
             this.ResumeLayout(false);
