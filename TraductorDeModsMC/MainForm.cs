@@ -19,6 +19,7 @@ namespace TraductorDeModsMC
         private string NewModPath;
         private string translatePath;
         string modId;
+        string currentLenguage;
         public MinecraftTranslator()
         {
             InitializeComponent();
@@ -26,6 +27,14 @@ namespace TraductorDeModsMC
 
         private void SelectMod(object sender, EventArgs e)
         {
+            if(File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\.minecraft\options.txt"))
+            {
+                currentLenguage = File.ReadLines((Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\.minecraft\options.txt")).Skip(38).Take(1).First().Replace("lang:", "");
+            }
+            else
+            {
+                currentLenguage = "es_es";
+            }
             if (Directory.Exists(Directory.GetCurrentDirectory() + @"\Mod"))
             {
                 Directory.Delete(Directory.GetCurrentDirectory() + @"\Mod", true);
@@ -69,11 +78,11 @@ namespace TraductorDeModsMC
         {
             if (translatePath.Contains("json"))
             {
-                File.Copy(translatePath, (Directory.GetCurrentDirectory() + @"\Mod\UnZipped\assets\" + modId + @"\lang\es_es.json"));
+                File.Copy(translatePath, (Directory.GetCurrentDirectory() + @"\Mod\UnZipped\assets\" + modId + @"\lang\" + currentLenguage + ".json"));
             }
             else
             {
-                File.Copy(translatePath, (Directory.GetCurrentDirectory() + @"\Mod\UnZipped\assets\" + modId + @"\lang\es_es.lang"));
+                File.Copy(translatePath, (Directory.GetCurrentDirectory() + @"\Mod\UnZipped\assets\" + modId + @"\lang\" + currentLenguage + ".lang"));
             }
             ZipFile.CreateFromDirectory(Directory.GetCurrentDirectory() + @"\Mod\UnZipped", Directory.GetCurrentDirectory() + @"\Mod\" + modId + ".jar");
             DeleteFiles();
@@ -86,5 +95,6 @@ namespace TraductorDeModsMC
             Directory.Delete(Directory.GetCurrentDirectory() + @"\Mod\UnZipped", true);
             File.Delete(Directory.GetCurrentDirectory() + @"\Mod\ToTranslate.jar");
         }
+
     }
 }

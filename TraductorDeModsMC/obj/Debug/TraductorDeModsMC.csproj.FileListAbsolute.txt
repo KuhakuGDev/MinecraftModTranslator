@@ -8,3 +8,13 @@ C:\Users\Ale\source\repos\TraductorDeModsMC\TraductorDeModsMC\obj\Debug\Traducto
 C:\Users\Ale\source\repos\TraductorDeModsMC\TraductorDeModsMC\obj\Debug\TraductorDeModsMC.exe
 C:\Users\Ale\source\repos\TraductorDeModsMC\TraductorDeModsMC\obj\Debug\TraductorDeModsMC.pdb
 C:\Users\Ale\source\repos\TraductorDeModsMC\TraductorDeModsMC\obj\Debug\TraductorDeModsMC.MinecraftTranslator.resources
+C:\Users\Ale\source\repos\MinecraftModTranslatorLocal\TraductorDeModsMC\bin\Debug\TraductorDeModsMC.exe.config
+C:\Users\Ale\source\repos\MinecraftModTranslatorLocal\TraductorDeModsMC\bin\Debug\TraductorDeModsMC.exe
+C:\Users\Ale\source\repos\MinecraftModTranslatorLocal\TraductorDeModsMC\bin\Debug\TraductorDeModsMC.pdb
+C:\Users\Ale\source\repos\MinecraftModTranslatorLocal\TraductorDeModsMC\obj\Debug\TraductorDeModsMC.csproj.AssemblyReference.cache
+C:\Users\Ale\source\repos\MinecraftModTranslatorLocal\TraductorDeModsMC\obj\Debug\TraductorDeModsMC.MinecraftTranslator.resources
+C:\Users\Ale\source\repos\MinecraftModTranslatorLocal\TraductorDeModsMC\obj\Debug\TraductorDeModsMC.Properties.Resources.resources
+C:\Users\Ale\source\repos\MinecraftModTranslatorLocal\TraductorDeModsMC\obj\Debug\TraductorDeModsMC.csproj.GenerateResource.cache
+C:\Users\Ale\source\repos\MinecraftModTranslatorLocal\TraductorDeModsMC\obj\Debug\TraductorDeModsMC.csproj.CoreCompileInputs.cache
+C:\Users\Ale\source\repos\MinecraftModTranslatorLocal\TraductorDeModsMC\obj\Debug\TraductorDeModsMC.exe
+C:\Users\Ale\source\repos\MinecraftModTranslatorLocal\TraductorDeModsMC\obj\Debug\TraductorDeModsMC.pdb
