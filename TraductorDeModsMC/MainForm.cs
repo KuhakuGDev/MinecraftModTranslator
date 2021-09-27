@@ -31,7 +31,15 @@ namespace TraductorDeModsMC
         {
             if(File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\.minecraft\options.txt"))
             {
-                currentLenguage = File.ReadLines((Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\.minecraft\options.txt")).Skip(38).Take(1).First().Replace("lang:", "");
+                string[] lines = File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\.minecraft\options.txt");
+                foreach (string line in lines)
+                {
+                    if (line.StartsWith("lang:"))
+                    {
+                        currentLenguage = line.Replace("lang:", "");
+                        label1.Text = currentLenguage;
+                    }
+                }
             }
             else
             {
@@ -58,10 +66,19 @@ namespace TraductorDeModsMC
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            modId = File.ReadLines(Directory.GetCurrentDirectory() + @"\Mod\UnZipped\META-INF\mods.toml").Skip(5).Take(1).First();
-            modId = modId.Replace("modId=", "");
-            modId = modId.Replace("\"", "");
-            SearchModId.Enabled = false;
+
+            string[] dirs = Directory.GetDirectories(Directory.GetCurrentDirectory() + @"\Mod\UnZipped\assets\");
+            foreach(string dir in dirs)
+            {
+                if(Directory.Exists(dir + @"\lang"))
+                {
+                    modId = Path.GetFileName(Path.GetDirectoryName(dir + @"\"));
+                    SearchModId.Enabled = false;
+                }
+            }
+
+
+
         }
 
         private void SelectLang(object sender, EventArgs e)
@@ -84,6 +101,7 @@ namespace TraductorDeModsMC
             }
             else
             {
+                Clipboard.SetText(Directory.GetCurrentDirectory() + @"\Mod\UnZipped\assets\" + modId + @"\lang\" + currentLenguage + ".lang");
                 File.Copy(translatePath, (Directory.GetCurrentDirectory() + @"\Mod\UnZipped\assets\" + modId + @"\lang\" + currentLenguage + ".lang"));
             }
             ZipFile.CreateFromDirectory(Directory.GetCurrentDirectory() + @"\Mod\UnZipped", Directory.GetCurrentDirectory() + @"\Mod\" + modId + ".jar");
